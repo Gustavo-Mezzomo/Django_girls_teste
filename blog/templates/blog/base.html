@@ -1,0 +1,28 @@
+{% load static %}
+<html>
+    <head>
+        <title>Ronaldinho Buser</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div class="page-header">
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_new' %}" class="top-menu"><span class="addbutton glyphicon glyphicon-plus"></span></a>
+            {% endif %}
+            <h1><a href="/">Ronaldinho Buser</a></h1>
+        </div>
+            <img src="https://inteligenciademercado.blogfolha.uol.com.br/files/2020/12/Ronaldinho-Buser-768x430.png" width="500" class="center">
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
